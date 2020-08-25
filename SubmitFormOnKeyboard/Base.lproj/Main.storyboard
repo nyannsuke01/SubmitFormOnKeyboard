@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,82 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SubmitFormOnKeyboard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YR9-ep-TAk">
+                                <rect key="frame" x="186" y="226" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8y-aC-jQe">
+                                <rect key="frame" x="140" y="320" width="138" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="送信フォームを表示"/>
+                                <connections>
+                                    <action selector="showKeyboard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ffd-My-aGM"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rhf-Qv-6AD">
+                                <rect key="frame" x="28" y="932" width="341" height="34"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aay-fO-wBE">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="pf1-jJ-zVR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ei1-rr-BrN">
+                                        <rect key="frame" x="310" y="0.0" width="31" height="34"/>
+                                        <state key="normal" title="送信"/>
+                                        <connections>
+                                            <action selector="submitText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SNH-zc-Q3A"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="aay-fO-wBE" secondAttribute="bottom" id="1hH-hk-8RD"/>
+                                    <constraint firstAttribute="bottom" secondItem="ei1-rr-BrN" secondAttribute="bottom" id="Lzs-vY-Lkw"/>
+                                    <constraint firstItem="aay-fO-wBE" firstAttribute="top" secondItem="rhf-Qv-6AD" secondAttribute="top" id="SR1-py-fqt"/>
+                                    <constraint firstItem="ei1-rr-BrN" firstAttribute="leading" secondItem="aay-fO-wBE" secondAttribute="trailing" constant="10" id="UFI-hg-kt7"/>
+                                    <constraint firstItem="ei1-rr-BrN" firstAttribute="top" secondItem="rhf-Qv-6AD" secondAttribute="top" id="UQ0-az-sYZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="ei1-rr-BrN" secondAttribute="trailing" id="lbX-lb-XVW"/>
+                                    <constraint firstItem="aay-fO-wBE" firstAttribute="leading" secondItem="rhf-Qv-6AD" secondAttribute="leading" id="xej-cd-5vd"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="rhf-Qv-6AD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="28" id="Tsv-Xe-PbP"/>
+                            <constraint firstAttribute="bottom" secondItem="rhf-Qv-6AD" secondAttribute="bottom" constant="-70" id="jiW-Sn-Uo1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Ga7-dY-xFj" appends="YES" id="Whg-IW-7T8"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="submitForm" destination="rhf-Qv-6AD" id="Asa-P3-MJH"/>
+                        <outlet property="submitFormBottomConstraints" destination="jiW-Sn-Uo1" id="1VC-OA-aE3"/>
+                        <outlet property="textField" destination="aay-fO-wBE" id="J3A-NV-Fsz"/>
+                        <outlet property="textLabel" destination="YR9-ep-TAk" id="C1Z-F1-7Lp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Ga7-dY-xFj">
+                    <connections>
+                        <action selector="closeKeyboard:" destination="BYZ-38-t0r" id="Ock-tg-hOn"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
         </scene>
     </scenes>
 </document>
